@@ -1,0 +1,17 @@
+{
+  "name": "hf50mvp",
+  "version": "5.0.0",
+  "repository": "https://github.com/TTCNGD/hf50mvp.git",
+  "author": "Anhnl-Funix <Anhnl@funix.edu.vn>",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build"
+  },
+  "devDependencies": {
+    "turbo": "^1.5.6"
+  }
+}
