@@ -1,4 +1,4 @@
-# shop101
+# base-project-nextjs-nodejs
 
 ## Dependencies
 
