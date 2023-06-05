@@ -1,73 +1,55 @@
-# Work-Flow - Kanban board
+WorkFlow
 
-### Application functionality:
-- User registration
-- User auhentication using JWT
-- Profile managment
-- Board creation
-- Pinning boards to main page
-- 4 available roles *[ GUEST, OWNER, ADMIN, REGULAR]*
-- Custom tag creation
-- Create tasks, assign people to them and add tags
-- Real time task and column moving using *beautifulDnD* and *socket.io*
+## Overview
+
+This is a clone application for WorkFlow. This has been built for learning purpose. My plan is to improve this project and add more features in every release.
 
 
-### Makefile scripts
-*example:*
-```
-make install
-```
-> 
-- **install** - *installs server and client dependencies*
-- **install_server** - *installs server dependencies*
-- **install_client** - *installs client dependencies*
-- **run** - *run app in production*
-- **run_server** - *runs server in development*
-- **run_client** - *runs client in deevelopment*
-- **update** - *pulls updates from repo and install dependancies*
-- **build** - *builds client and puts it in server/public directory*
-- **clean** - *deletes **node_module** folder*
-- **env_template** - *use **.env.example** as template to create **.env***
+## Features 🤩
 
-## Enviroment variables
-*application requires a **.env** file which contains:*
-### Server
-> **DBURI**: *database URI* - **is required**
-<br> **PORT**: *server port* - **default is 8080**
-<br> **SECRET_KEY**: *secret that will be used to encrypt passwords and tokens* - **default is "veri $ecret K#y"**
-### Client
-> **REACT_APP_API_URI**: 
->> **DEVELOPMENT**: *required* <br>
->> **PRODUCTION**: *default is '/'*
+- Login/Register with JWT token authentication
+- Ability to create/update/delete the board
+- Ability to add/update/move/delete the card
+- Background image library for the board
+- Add labels to the card
+- Supports adding of detail description in the card
+- Invite user to the board
+- Assign a card to the user
 
-## Used Technologies
-### Backend
-* [Node.js](https://nodejs.org) - pen-source, cross-platform JavaScript run-time environment for executing JavaScript code server-side
-* [Express.js](https://expressjs.com) - for building web applications, APIs and connecting middleware.
-* [MongoDB](https://www.mongodb.com) - NoSQL database for data storage.
-* [Mongoose](http://mongoosejs.com/)  - ODM library for MongoDB and Node.js.
-* [PassportJS](http://www.passportjs.org/) - authentication middleware for Node.js.
-* [Passport-JWT](http://www.passportjs.org/packages/passport-jwt/) - A Passport strategy for authenticating with a JSON Web Token.
-* [bcryptjs](https://www.npmjs.com/package/bcrypt) - A library to help you hash passwords.
-* [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) - An implementation of JSON Web Tokens.
-* [socket.io](https://www.npmjs.com/package/socket.io) - Socket.IO enables real-time bidirectional event-based communication.
+## Requirements
 
-### Frontend
-* [React](https://reactjs.org/) - Javascript library for creating User Interfaces.
-* [React-Beautiful-DnD](https://github.com/atlassian/react-beautiful-dnd) - Library that allows for drag and drop interactions within React.
-* [Material UI](https://material-ui.com/) - Styled components.
-* [Formik](https://formik.org/) - Form library.
-* [Yup](https://www.npmjs.com/package/yup) - JavaScript schema builder for value parsing and validation.
-* [SASS](https://sass-lang.com/) - Used for styling HTML.
-* [Prop Types](https://www.npmjs.com/package/prop-types) - Runtime type checking for React props and similar objects.
-* [Query-String](https://www.npmjs.com/package/query-string) - Query String parser.
-* [axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
-* [socket.io-client](https://www.npmjs.com/package/socket.io-client) - A standalone build of socket.io-client is exposed automatically by the socket.io server as /socket.io/socket.io.js.
-* [React Router](https://reactrouter.com/web/guides/quick-start) - Library for creating navigations in one page applications in React.
+1. [Node.js](https://nodejs.org/)
+2. [npm](https://www.npmjs.com/)
 
+## Steps to run this on your local
 
+First install the MongoDB Compass for better visualization of data with MongoDB server.
 
+1. Clone this repo using `git clone https://github.com/sanglm2207/workflow-app.git`
+2. Create _.env.local_ and add this env variable `LOCAL_MONGODB=mongodb://localhost:27017/trello`
+    Add `JWT_SECRET_KEY=randomstrings`
+3. Run `yarn install`
+4. Run `yarn dev`
 
+`For unsplash gallery, api key is needed which can be generated from unsplash website`
 
+### If you want to run the project using docker
 
+Install docker on your machine and start it
+
+1. Create _.env.development_ file.
+2. Add `LOCAL_MONGODB=mongodb://mongodb:27017/trello`
+3. Run `docker-compose up`
+
+## What's next 🚀
+
+- Comment on the card
+- Add cypress testing
+
+## Tech stacks
+
+- Nextjs with typescript
+- MongoDB for local development
+- Mongo Atlas for production DB
+- Chakra UI library
 
