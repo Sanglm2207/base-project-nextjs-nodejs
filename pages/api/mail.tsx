@@ -11,7 +11,7 @@ const sendMail = (email, res, emailData, user) => {
 
   const msg = {
     to: email,
-    from: 'sanglm2207@gmail.com',
+    from: 'kaimedia.creator@gmail.com',
     subject: 'You are invited to join to a WorkFlow board',
     html: `<div>
       <div style="height:100px; background-color:#26292c; color: white">
@@ -38,7 +38,10 @@ const sendMail = (email, res, emailData, user) => {
 };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  sgMail.setApiKey(
+    process.env.SENDGRID_API_KEY ||
+      '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'
+  );
 
   const { db, client } = await connectToDatabase();
 
